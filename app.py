@@ -1,11 +1,10 @@
 import os
-import ssl
 
 from dotenv import load_dotenv
 from flask import Flask, render_template
 from flask_cors import CORS
 
-from blueprints.home import home_bp
+from blueprints.api import api_bp
 
 if __name__ == '__main__':
     app = Flask(__name__)
@@ -15,7 +14,7 @@ if __name__ == '__main__':
 
     CORS(app)
 
-    app.register_blueprint(home_bp, url_prefix="/")
+    app.register_blueprint(api_bp, url_prefix="/api/v1")
 
     @app.errorhandler(404)
     def page_not_found(error):
