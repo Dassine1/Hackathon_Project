@@ -16,12 +16,5 @@ class Options:
 
     def get_os_options(self):
         self.os = download_options.keys()
-        match self.os:
-            case "Windows":
-                return download_options.get("Windows")
-            case "Mac":
-                return download_options.get("Mac")
-            case "Linux":
-                return download_options.get("Linux")
-            case "Others":
-                return download_options.get("Others")
+        return download_options.get(self.os)
+        
