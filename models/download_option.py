@@ -13,8 +13,8 @@ class Options:
 
     def get_origin_link(self) -> str:
         return "https://github.com/new"
+        
 
     def get_os_options(self):
         self.os = download_options.keys()
         return download_options.get(self.os)
-        
